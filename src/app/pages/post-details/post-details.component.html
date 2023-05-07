@@ -1,0 +1,29 @@
+<div *ngIf="!postDetails || !postComments" class="loading">
+  loading...
+</div>
+
+<div class="post-details" *ngIf="postDetails && postComments">
+  <div class="container">
+    <div class="post-details__card" *ngIf="postDetails">
+      <div class="post-details__card__id">
+        {{postDetails.id}}
+      </div>
+      <div class="post-details__card__details">
+        <div class="post-details__card__details__title">
+          {{postDetails.title}}
+        </div>
+        <div class="post-details__card__details__body">
+          {{postDetails.body}}
+        </div>
+      </div>
+    </div>
+    <div class="post-details__comment" *ngIf="postComments">
+      <div class="post-details__title">
+        <h2> Comments </h2>
+      </div>
+      <div class="post-details__comment__cards-container">
+        <app-comments-list-card *ngFor="let comment of postComments" [comment]="comment"></app-comments-list-card>
+      </div>
+    </div>
+  </div>
+</div>

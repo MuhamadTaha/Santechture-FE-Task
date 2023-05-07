@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card__id">
+    {{post.id}}
+  </div>
+  <div class="card__details">
+    <div class="card__details__title">
+      {{post.title}}
+    </div>
+    <div class="card__details__body">
+      {{post.body}}
+    </div>
+  </div>
+  <div class="card__actions">
+    <button class="button edit-btn" (click)="onClickEditFn()"> Edit Post </button>
+    <button class="button details-btn" (click)="onClickDetailsFn()"> Show Details </button>
+  </div>
+</div>
